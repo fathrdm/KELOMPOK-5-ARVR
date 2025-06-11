@@ -1,0 +1,8 @@
+C:/Fathiah/SOFTWARE/UNITY/PROJECT UNITY/KELOMPOK 5 ARVR/KELOMPOK 5 ARVR/.utmp/RelWithDebInfo/1m4a291e/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Fathiah/SOFTWARE/UNITY/PROJECT UNITY/KELOMPOK 5 ARVR/KELOMPOK 5 ARVR/.utmp/RelWithDebInfo/1m4a291e/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Fathiah/SOFTWARE/UNITY/PROJECT UNITY/KELOMPOK 5 ARVR/KELOMPOK 5 ARVR/.utmp/RelWithDebInfo/1m4a291e/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Fathiah/SOFTWARE/UNITY/PROJECT UNITY/KELOMPOK 5 ARVR/KELOMPOK 5 ARVR/.utmp/RelWithDebInfo/1m4a291e/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Fathiah/SOFTWARE/UNITY/PROJECT UNITY/KELOMPOK 5 ARVR/KELOMPOK 5 ARVR/.utmp/RelWithDebInfo/1m4a291e/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/Fathiah/SOFTWARE/UNITY/PROJECT UNITY/KELOMPOK 5 ARVR/KELOMPOK 5 ARVR/.utmp/RelWithDebInfo/1m4a291e/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Fathiah/SOFTWARE/UNITY/PROJECT UNITY/KELOMPOK 5 ARVR/KELOMPOK 5 ARVR/.utmp/RelWithDebInfo/1m4a291e/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Fathiah/SOFTWARE/UNITY/PROJECT UNITY/KELOMPOK 5 ARVR/KELOMPOK 5 ARVR/.utmp/RelWithDebInfo/1m4a291e/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
