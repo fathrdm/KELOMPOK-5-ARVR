@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="babun" size="1.000000 1.414141" />
+    <ImageTarget name="gong" size="1.000000 1.414141" />
+    <ImageTarget name="kuriding" size="1.000000 1.414141" />
+    <ImageTarget name="kurung-kurung" size="1.000000 1.414141" />
+    <ImageTarget name="panting" size="1.000000 1.414141" />
+  </Tracking>
+</QCARConfig>
