@@ -5,6 +5,7 @@ using Vuforia;
 using DG.Tweening;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class MusicPlayerVuforia10 : MonoBehaviour
 {
     [SerializeField] List<AlatMusik> listAudioAlatMusik;
@@ -17,6 +18,14 @@ public class MusicPlayerVuforia10 : MonoBehaviour
     private AlatMusik _targetMusic;
     private AlatMusik _targetText;
     private bool _isDescribeInMiddle = true;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
     public void musikapayangdimainkan(string namamusik)
     {
         foreach (var namaAlat in listAudioAlatMusik)
