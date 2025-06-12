@@ -1,19 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Vuforia;
 using DG.Tweening;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-public class MusicPlayerVuforia10 : MonoBehaviour
+public class MainSceneManager: MonoBehaviour
 {
     [SerializeField] List<AlatMusik> listAudioAlatMusik;
     [SerializeField] List<GameObject> button;
     [SerializeField] GameObject _nameMusic, _textDescribe;
     [SerializeField] float _moveDuration;
     [SerializeField] float _middleY, _bottomY;
-
     [SerializeField] RectTransform _describeCard, _describeCardBottom;
     private AlatMusik _targetMusic;
     private AlatMusik _targetText;
@@ -83,20 +79,20 @@ public class MusicPlayerVuforia10 : MonoBehaviour
         }
     }
 
-    public void DescribeCardMiddle()
+    private void DescribeCardMiddle()
     {
         _isDescribeInMiddle = true;
         _describeCard.DOAnchorPosY(_middleY, _moveDuration);
         _describeCardBottom.DOAnchorPosY(_bottomY, _moveDuration);
     }
-    public void DescribeCardBottom()
+    private void DescribeCardBottom()
     {
         _describeCard.DOAnchorPosY(_bottomY, _moveDuration).SetUpdate(true);
         _describeCardBottom.DOAnchorPosY(-74, _moveDuration);
         _isDescribeInMiddle = false;
     }
 
-    public void TriggerDescribe()
+    private void TriggerDescribe()
     {
         if (_describeCard && _describeCardBottom != null && _isDescribeInMiddle)
         {
