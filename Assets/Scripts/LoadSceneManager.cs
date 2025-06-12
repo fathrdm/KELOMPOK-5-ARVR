@@ -1,21 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class LoadSceneManager : MonoBehaviour
 {
-    public static SceneLoader instance;
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject); 
-        }
-    }
     public void LoadMainScene()
     {
         SceneManager.LoadScene("MainScene");

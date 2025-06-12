@@ -22,7 +22,7 @@ public class MainSceneManager: MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
     }
-    public void musikapayangdimainkan(string namamusik)
+    public void ActiveMusic(string namamusik)
     {
         foreach (var namaAlat in listAudioAlatMusik)
         {
@@ -34,19 +34,19 @@ public class MainSceneManager: MonoBehaviour
             if (namaAlat.name == namamusik)
             {
                 _targetMusic = namaAlat;
-                isDescribeOn();
+                IsDescribeOn();
                 break;
             }
         }
     }
-    public void buttonActive()
+    public void UIActive()
     {
         foreach (var btn in button)
         {
             btn.SetActive(true);
         }
     }
-    public void buttonNonActive()
+    public void UINonActive()
     {
         foreach (var btn in button)
         {
@@ -54,7 +54,7 @@ public class MainSceneManager: MonoBehaviour
         }
     }
 
-    public void isMusicOnTrue()
+    public void MusicOnTrue()
     {
         if (_targetMusic != null)
         {
@@ -62,7 +62,7 @@ public class MainSceneManager: MonoBehaviour
         }
     }
 
-    public void isMusicOnFalse()
+    public void MusicOnFalse()
     {
         if (_targetMusic != null)
         {
@@ -70,7 +70,7 @@ public class MainSceneManager: MonoBehaviour
         }
     }
 
-    public void isDescribeOn()
+    public void IsDescribeOn()
     {
         if (_targetMusic != null)
         {
