@@ -3,111 +3,119 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.SceneManagement;
-public class MainSceneManager: MonoBehaviour
+
+namespace ARVR.PROJECT
 {
-    [SerializeField] List<AlatMusik> listAudioAlatMusik;
-    [SerializeField] List<GameObject> button;
-    [SerializeField] GameObject _nameMusic, _textDescribe;
-    [SerializeField] float _moveDuration;
-    [SerializeField] float _middleY, _bottomY;
-    [SerializeField] RectTransform _describeCard, _describeCardBottom;
-    private AlatMusik _targetMusic;
-    private AlatMusik _targetText;
-    private bool _isDescribeInMiddle = true;
 
-    private void Update()
+    public class MainSceneManager : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-    }
-    public void ActiveMusic(string namamusik)
-    {
-        foreach (var namaAlat in listAudioAlatMusik)
-        {
-            namaAlat.audioClip.Stop();
-        }
+        [SerializeField] List<AlatMusik> listAudioAlatMusik;
+        [SerializeField] List<GameObject> button;
+        [SerializeField] GameObject _nameMusic, _textDescribe, _buttonWarning;
+        [SerializeField] float _moveDuration;
+        [SerializeField] float _middleY, _bottomY;
+        [SerializeField] RectTransform _describeCard, _describeCardBottom;
+        private AlatMusik _targetMusic;
+        private AlatMusik _targetText;
+        private bool _isDescribeInMiddle = true;
 
-        foreach (var namaAlat in listAudioAlatMusik)
+        private void Update()
         {
-            if (namaAlat.name == namamusik)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                _targetMusic = namaAlat;
-                IsDescribeOn();
-                break;
+                SceneManager.LoadScene("MainMenu");
             }
         }
-    }
-    public void UIActive()
-    {
-        foreach (var btn in button)
+        public void ActiveMusic(string namamusik)
         {
-            btn.SetActive(true);
+            foreach (var namaAlat in listAudioAlatMusik)
+            {
+                namaAlat.audioClip.Stop();
+            }
+
+            foreach (var namaAlat in listAudioAlatMusik)
+            {
+                if (namaAlat.name == namamusik)
+                {
+                    _targetMusic = namaAlat;
+                    IsDescribeOn();
+                    break;
+                }
+            }
         }
-    }
-    public void UINonActive()
-    {
-        foreach (var btn in button)
+        public void UIActive()
         {
-            btn.SetActive(false);
+            foreach (var btn in button)
+            {
+                btn.SetActive(true);
+            }
+
+            _buttonWarning.SetActive(false);
         }
-    }
-
-    public void MusicOnTrue()
-    {
-        if (_targetMusic != null)
+        public void UINonActive()
         {
-            _targetMusic.audioClip.Play();
+            foreach (var btn in button)
+            {
+                btn.SetActive(false);
+            }
+            _buttonWarning.SetActive(true);
         }
-    }
 
-    public void MusicOnFalse()
-    {
-        if (_targetMusic != null)
+
+
+        public void MusicOnTrue()
         {
-            _targetMusic.audioClip.Stop();
+
+            _targetMusic?.audioClip.Play();
+
         }
-    }
 
-    public void IsDescribeOn()
-    {
-        if (_targetMusic != null)
+        public void MusicOnFalse()
         {
-            _nameMusic.GetComponent<TMP_Text>().text = _targetMusic.name;
-            _textDescribe.GetComponent<TMP_Text>().text = _targetMusic.textDescribe;
+
+            _targetMusic?.audioClip.Stop();
         }
-    }
 
-    private void DescribeCardMiddle()
-    {
-        _isDescribeInMiddle = true;
-        _describeCard.DOAnchorPosY(_middleY, _moveDuration);
-        _describeCardBottom.DOAnchorPosY(_bottomY, _moveDuration);
-    }
-    private void DescribeCardBottom()
-    {
-        _describeCard.DOAnchorPosY(_bottomY, _moveDuration).SetUpdate(true);
-        _describeCardBottom.DOAnchorPosY(-74, _moveDuration);
-        _isDescribeInMiddle = false;
-    }
-
-    private void TriggerDescribe()
-    {
-        if (_describeCard && _describeCardBottom != null && _isDescribeInMiddle)
+        public void IsDescribeOn()
         {
-            DescribeCardBottom();
-        }else
-            DescribeCardMiddle();
+            if (_targetMusic != null)
+            {
+                _nameMusic.GetComponent<TMP_Text>().text = _targetMusic.name;
+                _textDescribe.GetComponent<TMP_Text>().text = _targetMusic.textDescribe;
+            }
+        }
+
+        private void DescribeCardMiddle()
+        {
+            _isDescribeInMiddle = true;
+            _describeCard.DOAnchorPosY(_middleY, _moveDuration);
+            _describeCardBottom.DOAnchorPosY(_bottomY, _moveDuration);
+        }
+        private void DescribeCardBottom()
+        {
+            _describeCard.DOAnchorPosY(_bottomY, _moveDuration).SetUpdate(true);
+            _describeCardBottom.DOAnchorPosY(-74, _moveDuration);
+            _isDescribeInMiddle = false;
+        }
+
+        private void TriggerDescribe()
+        {
+            if (_describeCard && _describeCardBottom != null && _isDescribeInMiddle)
+            {
+                DescribeCardBottom();
+            }
+            else
+                DescribeCardMiddle();
+        }
+
     }
 
-}
-
-[System.Serializable]
-public class AlatMusik
-{
-    public string name;
-    public AudioSource audioClip;
-    public string textDescribe;
+    [System.Serializable]
+    public class AlatMusik
+    {
+        public string name;
+        public AudioSource audioClip;
+        public string textDescribe;
+    }
 }
 
